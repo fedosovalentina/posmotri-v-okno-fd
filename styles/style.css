@@ -20,7 +20,7 @@ html {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100%;
+ 
   margin: auto;
   padding: 0 30px;
   color: #fff;
@@ -51,13 +51,7 @@ ol {
 }
 
 
-.title {
-  font-family: Oswald, sans-serif;
-  font-weight: 700;
-  font-size: 75px;
-  line-height: 70.5px;
-  text-transform: uppercase;
-}
+
 
 /* ========================= */
 /*           СКРОЛ           */
@@ -94,120 +88,9 @@ ol {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  object-position: bottom right;
 }
 
-/* ========================= */
-/*          СПИСОК           */
-/* ========================= */
-
-.content {
-  display: grid;
-  flex-grow: 1;
-  grid-template-columns: 711px 1fr;
-  align-items: center;
-  gap: 30px;
-}
-
-.content__accent {
-  color: rgba(84, 80, 80, 1);
-}
-
-.content__details {
-  display: flex;
-  flex-direction: column;
-  gap: 22px;
-  width: 100%;
-}
-
-.content__list {
-  display: flex;
-  flex-direction: column;
-  gap: 30px;
-}
-
-.content__list-container {
-  position: relative;
-  max-height: 298px;
-  overflow: auto;
-}
-
-.content__list-item {
-  padding: 0 2px;
-}
-
-.content__video-card {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: flex-start;
-}
-
-.content__video-card-thumbnail {
-  flex-grow: 0;
-  width: 194px;
-  object-fit: cover;
-  object-position: center;
-}
-
-.content__video-card-description-container {
-  flex-grow: 1;
-  flex-basis: 0;
-  overflow: hidden;
-}
-
-.content__card-link {
-  color: white;
-  text-decoration: none;
-  cursor: pointer;
-}
-
-.content__video-card-title {
-  width: 196px;
-  overflow: hidden;
-  font-family: Oswald;
-  font-weight: 700;
-  font-size: 30px;
-  line-height: 30px;
-  text-transform: uppercase;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-}
-
-.content__video-card-description {
-  display: -webkit-box;
-  height: 65px;
-  margin-top: 6px;
-  overflow: hidden;
-  line-height: 16.2px;
-  -webkit-box-orient: vertical;
-  -webkit-line-clamp: 4;
-  line-clamp: 4;
-}
-
-.content__card-link_current {
-  background-color: rgba(84, 80, 80, 1);
-}
-
-.content__list-item:active {
-  background-color: rgba(84, 80, 80, 1);
-}
-
-.content__card-link:hover {
-  text-decoration: underline;
-  text-decoration-thickness: 1px;
-  text-underline-offset: 2px;
-}
-
-.content__list-item:has(:focus-visible) {
-  outline: 1px solid white;
-  outline-offset: -1px;
-}
-
-.search-form {
-  display: flex;
-  justify-content: space-between;
-  align-items: end;
-}
 
 /* ========================= */
 /*           ФОРМА           */
@@ -236,7 +119,6 @@ ol {
 
 .search-form__textfield {
   width: 225px;
-  height: 27px;
   border: none;
   border-top: 1px solid white;
   border-right: 1px solid transparent;
@@ -271,32 +153,21 @@ ol {
   cursor: pointer;
 }
 
-.search-form__label:hover {
+.search-form__label .search-form__label-text:hover {
   text-decoration: underline;
   text-decoration-thickness: 1px;
   text-underline-offset: 2px;
 }
 
-.search-form__textfield::placeholder:hover {
-  text-decoration: none;
-}
 
-.search-form__checkbox {
-  position: absolute;
-  width: 0;
-  height: 0;
-  outline: none;
-  overflow: hidden;
-  appearance: none;
-}
 
 .search-form__pseudo-checkbox {
-  position: relative;
+ 
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 18px;
-  height: 18px;
+  width: 19px;
+  height: 19px;
   border: 1px solid transparent;
   outline: 1px solid white;
   background-color: transparent;
@@ -306,8 +177,9 @@ ol {
 /* Стилизация внутреннего квадрата при :checked */
 .search-form__checkbox:checked + .search-form__pseudo-checkbox::after {
   content: "";
-  width: 16px;
-  height: 16px;
+  width: 19px;
+  height: 19px;
+  border: 1px solid transparent;
   background-color: white;
 }
 
@@ -319,14 +191,15 @@ ol {
 .button {
   border: 1px solid white;
   color: white;
-  font-family: Fira Sans Condensed;
+  font-family: Fira Sans Condensed, sans-serif;
   font-weight: 700;
   font-size: 18px;
-  line-height: 21.6px;
+  line-height: 1.2em;
   letter-spacing: 0%;
   text-align: center;
   background-color: transparent;
   cursor: pointer;
+  height: 34px;
 }
 
 .button:active {
@@ -341,12 +214,12 @@ ol {
 
 .search-form__submit-button {
   width: 194px;
-  height: 34px;
+
 }
 
 .more-button {
   width: 399px;
-  height: 34px;
+ 
 }
 
 .visually-hidden {
@@ -357,4 +230,130 @@ ol {
   block-size: 1px;
   clip-path: inset(50%);
   white-space: nowrap;
+}
+
+
+/* ========================= */
+/*          СПИСОК           */
+/* ========================= */
+
+.title {
+  font-family: Oswald, sans-serif;
+  font-weight: 700;
+  font-size: 75px;
+  line-height: 0.94em;
+  text-transform: uppercase;
+}
+
+.content {
+  display: grid;
+  flex-grow: 1;
+  grid-template-columns: 711px 1fr;
+  align-items: center;
+  gap: 30px;
+}
+
+.content__accent {
+  color: rgba(84, 80, 80, 1);
+}
+
+.content__details {
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+  inline-size: 100%;
+}
+
+.content__list {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.content__list-container {
+  position: relative;
+  max-height: 298px;
+  overflow: auto;
+}
+
+.content__list-item {
+  padding: 0 2px;
+}
+
+.content__video-card {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.content__video-card-thumbnail {
+  flex-grow: 0;
+  width: 194px;
+  height: 103px;
+  object-fit: cover;
+  object-position: center;
+}
+
+.content__video-card-description-container {
+  flex-grow: 1;
+  flex-basis: 0;
+  overflow: hidden;
+}
+
+.content__card-link {
+  display: block;
+  color: white;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.content__video-card-title {
+  width: 196px;
+  overflow: hidden;
+  font-family: 'Oswald', sans-serif;
+  font-weight: 700;
+  font-size: 30px;
+  line-height: 1em;
+  text-transform: uppercase;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.content__video-card-description {
+  display: inline-block;
+  display: -webkit-box;
+  margin-top: 6px;
+  overflow: hidden;
+  line-height: 0.9em;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 4;
+  line-clamp: 4;
+  
+}
+
+.content__card-link_current {
+  background-color: rgba(84, 80, 80, 1);
+}
+
+.content__card-link:active {
+  background-color: rgba(84, 80, 80, 1);
+}
+
+.content__card-link:hover .content__video-card-title,
+.content__card-link:hover .content__video-card-description {
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 2px;
+}
+
+.content__list-item .content__card-link :focus-visible {
+  outline: 1px solid white;
+  outline-offset: -1px;
+}
+
+.search-form {
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
 }
